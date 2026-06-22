@@ -1,0 +1,51 @@
+{
+  "_args": [
+    [
+      "git+https://github.com/phuochau/react-native-thumbnail.git",
+      "/Users/a123/Documents/Git/fr8"
+    ]
+  ],
+  "_from": "git+https://github.com/phuochau/react-native-thumbnail.git",
+  "_id": "react-native-thumbnail@git+https://github.com/phuochau/react-native-thumbnail.git#dc9af06fcee553dce561158cfb05e915655634bb",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/react-native-thumbnail",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "git+https://github.com/phuochau/react-native-thumbnail.git",
+    "rawSpec": "git+https://github.com/phuochau/react-native-thumbnail.git",
+    "saveSpec": "git+https://github.com/phuochau/react-native-thumbnail.git",
+    "fetchSpec": "https://github.com/phuochau/react-native-thumbnail.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/phuochau/react-native-thumbnail.git#dc9af06fcee553dce561158cfb05e915655634bb",
+  "_spec": "git+https://github.com/phuochau/react-native-thumbnail.git",
+  "_where": "/Users/a123/Documents/Git/fr8",
+  "author": {
+    "name": "Hau Vo",
+    "email": "hau.vophuoc@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/phuochau/react-native-thumbnail/issues"
+  },
+  "description": "Get thumbnail from local media.",
+  "homepage": "https://github.com/phuochau/react-native-thumbnail#readme",
+  "keywords": [
+    "react-native"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "react-native-thumbnail",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phuochau/react-native-thumbnail.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.1.3"
+}

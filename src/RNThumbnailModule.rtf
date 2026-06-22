@@ -1,0 +1,293 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf400
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Menlo-BoldItalic;\f4\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue109;\red109\green111\blue5;\red82\green0\blue103;
+\red15\green112\blue3;\red109\green109\blue109;\red0\green0\blue254;}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c0\c42745;\csgenericrgb\c42745\c43529\c1961;\csgenericrgb\c32157\c0\c40392;
+\csgenericrgb\c5882\c43922\c1176;\csgenericrgb\c42745\c42745\c42745;\csgenericrgb\c0\c0\c99608;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+
+\f1\b \cf2 package 
+\f2\b0 \cf0 me.hauvo.thumbnail;\
+\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 com.facebook.react.bridge.ReactApplicationContext;\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 com.facebook.react.bridge.ReactContextBaseJavaModule;\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 com.facebook.react.bridge.\cf3 ReactMethod\cf0 ;\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 com.facebook.react.bridge.Promise;\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 com.facebook.react.bridge.Arguments;\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 com.facebook.react.bridge.WritableMap;\
+\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 android.media.ThumbnailUtils;\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 android.net.Uri;\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 android.os.Build;\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 android.graphics.Bitmap;\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 android.os.Environment;\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 android.provider.MediaStore;\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 android.util.Log;\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 android.media.MediaMetadataRetriever;\
+\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 java.io.File;\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 java.io.FileOutputStream;\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 java.io.OutputStream;\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 java.util.HashMap;\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 java.util.Map;\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 java.util.UUID;\
+\
+\
+
+\f1\b \cf2 public class 
+\f2\b0 \cf0 RNThumbnailModule 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 ReactContextBaseJavaModule \{\
+\
+  
+\f1\b \cf2 private final 
+\f2\b0 \cf0 ReactApplicationContext 
+\f1\b \cf4 reactContext
+\f2\b0 \cf0 ;\
+\
+  
+\f1\b \cf2 public 
+\f2\b0 \cf0 RNThumbnailModule(ReactApplicationContext reactContext) \{\
+    
+\f1\b \cf2 super
+\f2\b0 \cf0 (reactContext);\
+    
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf4 reactContext 
+\f2\b0 \cf0 = reactContext;\
+  \}\
+\
+  \cf3 @Override\
+  
+\f1\b \cf2 public 
+\f2\b0 \cf0 String getName() \{\
+    
+\f1\b \cf2 return \cf5 "RNThumbnail"
+\f2\b0 \cf0 ;\
+  \}\
+\
+  \cf3 @ReactMethod\
+  
+\f1\b \cf2 public 
+\f2\b0 \cf0 Bitmap get(String filePath, Promise promise) \{\
+    System.
+\f3\i\b \cf4 out
+\f2\i0\b0 \cf0 .println(
+\f1\b \cf5 "Path++++++++++"
+\f2\b0 \cf0 +filePath);\
+    
+\f1\b \cf2 try 
+\f2\b0 \cf0 \{\
+    filePath = filePath.replace(
+\f1\b \cf5 "file://"
+\f2\b0 \cf0 ,
+\f1\b \cf5 ""
+\f2\b0 \cf0 );\
+      System.
+\f3\i\b \cf4 out
+\f2\i0\b0 \cf0 .println(
+\f1\b \cf5 "Path++++++++++"
+\f2\b0 \cf0 +filePath);\
+
+\f4\i \cf6 //    MediaMetadataRetriever retriever = new MediaMetadataRetriever();\
+//    retriever.setDataSource(filePath, new HashMap<String, String>());\
+//    Bitmap image = retriever.getFrameAtTime(1000000, MediaMetadataRetriever.OPTION_PREVIOUS_SYNC);\
+\
+    
+\f2\i0 \cf0 Bitmap image = ThumbnailUtils.
+\f4\i createVideoThumbnail
+\f2\i0 (filePath,MediaStore.Video.Thumbnails.
+\f3\i\b \cf4 FULL_SCREEN_KIND
+\f2\i0\b0 \cf0 );\
+\
+    String fullPath = Environment.
+\f4\i getExternalStorageDirectory
+\f2\i0 ().getAbsolutePath() + 
+\f1\b \cf5 "/thumb"
+\f2\b0 \cf0 ;\
+\
+\
+      File dir = 
+\f1\b \cf2 new 
+\f2\b0 \cf0 File(fullPath);\
+      
+\f1\b \cf2 if 
+\f2\b0 \cf0 (!dir.exists()) \{\
+        dir.mkdirs();\
+      \}\
+\
+      OutputStream fOut = 
+\f1\b \cf2 null
+\f2\b0 \cf0 ;\
+\
+      String fileName = 
+\f1\b \cf5 "thumb-" 
+\f2\b0 \cf0 + UUID.
+\f4\i randomUUID
+\f2\i0 ().toString() + 
+\f1\b \cf5 ".jpeg"
+\f2\b0 \cf0 ;\
+      File file = 
+\f1\b \cf2 new 
+\f2\b0 \cf0 File(fullPath, fileName);\
+      file.createNewFile();\
+      fOut = 
+\f1\b \cf2 new 
+\f2\b0 \cf0 FileOutputStream(file);\
+\
+      
+\f4\i \cf6 // 100 means no compression, the lower you go, the stronger the compression\
+      
+\f2\i0 \cf0 image.compress(Bitmap.CompressFormat.
+\f3\i\b \cf4 JPEG
+\f2\i0\b0 \cf0 , \cf7 100\cf0 , fOut);\
+      fOut.flush();\
+      fOut.close();\
+\
+       MediaStore.Images.Media.
+\f4\i insertImage
+\f2\i0 (
+\f1\b \cf4 reactContext
+\f2\b0 \cf0 .getContentResolver(), file.getAbsolutePath(), file.getName(), file.getName());\
+\
+      WritableMap map = Arguments.
+\f4\i createMap
+\f2\i0 ();\
+\
+      map.putString(
+\f1\b \cf5 "path"
+\f2\b0 \cf0 , 
+\f1\b \cf5 "file://" 
+\f2\b0 \cf0 + fullPath + 
+\f1\b \cf5 '/' 
+\f2\b0 \cf0 + fileName);\
+      map.putDouble(
+\f1\b \cf5 "width"
+\f2\b0 \cf0 , image.getWidth());\
+      map.putDouble(
+\f1\b \cf5 "height"
+\f2\b0 \cf0 , image.getHeight());\
+      promise.resolve(map);\
+    \} 
+\f1\b \cf2 catch 
+\f2\b0 \cf0 (Exception e) \{\
+      promise.reject(e);\
+    \} 
+\f1\b \cf2 catch 
+\f2\b0 \cf0 (Throwable throwable) \{\
+      throwable.printStackTrace();\
+      promise.reject(throwable);\
+    \}\
+    
+\f1\b \cf2 return null
+\f2\b0 \cf0 ;\
+  \}\
+\
+  
+\f1\b \cf2 public 
+\f2\b0 \cf0 Bitmap retriveVideoFrameFromVideo(String videoPath)\
+          
+\f1\b \cf2 throws 
+\f2\b0 \cf0 Throwable \{\
+    Bitmap bitmap = 
+\f1\b \cf2 null
+\f2\b0 \cf0 ;\
+    MediaMetadataRetriever mediaMetadataRetriever = 
+\f1\b \cf2 null
+\f2\b0 \cf0 ;\
+    
+\f1\b \cf2 try 
+\f2\b0 \cf0 \{\
+      mediaMetadataRetriever = 
+\f1\b \cf2 new 
+\f2\b0 \cf0 MediaMetadataRetriever();\
+      
+\f1\b \cf2 if 
+\f2\b0 \cf0 (Build.VERSION.
+\f3\i\b \cf4 SDK_INT 
+\f2\i0\b0 \cf0 >= \cf7 14\cf0 )\
+        mediaMetadataRetriever.setDataSource(videoPath, 
+\f1\b \cf2 new 
+\f2\b0 \cf0 HashMap<String, String>());\
+      
+\f1\b \cf2 else\
+        
+\f2\b0 \cf0 mediaMetadataRetriever.setDataSource(videoPath);\
+\
+      bitmap = mediaMetadataRetriever.getFrameAtTime(\cf7 1\cf0 , MediaMetadataRetriever.
+\f3\i\b \cf4 OPTION_CLOSEST
+\f2\i0\b0 \cf0 );\
+    \} 
+\f1\b \cf2 catch 
+\f2\b0 \cf0 (Exception e) \{\
+      e.printStackTrace();\
+      
+\f1\b \cf2 throw new 
+\f2\b0 \cf0 Throwable(\
+              
+\f1\b \cf5 "Exception in retriveVideoFrameFromVideo(String videoPath)"\
+                      
+\f2\b0 \cf0 + e.getMessage());\
+\
+    \} 
+\f1\b \cf2 finally 
+\f2\b0 \cf0 \{\
+      
+\f1\b \cf2 if 
+\f2\b0 \cf0 (mediaMetadataRetriever != 
+\f1\b \cf2 null
+\f2\b0 \cf0 ) \{\
+        mediaMetadataRetriever.release();\
+      \}\
+    \}\
+    
+\f1\b \cf2 return 
+\f2\b0 \cf0 bitmap;\
+  \}\
+\}\
+}

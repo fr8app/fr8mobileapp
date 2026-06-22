@@ -1,0 +1,16 @@
+{
+  "codes": [
+   
+      {
+        "name": "Canada",
+        "dial_code": "+1",
+        "code": "CA"
+    },
+      {
+        "name": "India",
+        "dial_code": "+91",
+        "code": "IN"
+    }
+     
+  ]
+}

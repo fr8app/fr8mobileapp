@@ -1,0 +1,17 @@
+/* 
+  infoPlist.strings
+  FR8
+
+  Created by IOS4 on 01/03/21.
+  Copyright © 2021 Facebook. All rights reserved.
+*/
+"NSMicrophoneUsageDescription" = "Permita que mircophone grabe videos";
+"NSCameraUsageDescription" = "FR8 requiere acceso a la cámara para tomar fotos y videos para su foto de perfil y publicaciones";
+"NSPhotoLibraryUsageDescription" = "FR8 requiere acceso a la biblioteca de fotos para cargar fotos y videos para fotos de perfil y publicaciones";
+"NSContactsUsageDescription" = "FR8 requiere acceso a contactos para descubrir e invitar amigos";
+"NSLocationAlwaysUsageDescription"="A FR8 le gustaría acceder a su ubicación";
+"NSLocationAlwaysUsageDescription - INACTIVE"="La aplicación necesita usar su permiso de ubicación para la actividad en segundo plano";
+"NSLocationAlwaysAndWhenInUseUsageDescription"="A FR8 le gustaría acceder a su ubicación";
+"NSLocationWhenInUseUsageDescription"="A FR8 le gustaría acceder a su ubicación";
+"NSPhotoLibraryAddUsageDescription"="FR8 requiere acceso a la cámara para tomar fotos y videos para su foto de perfil y publicaciones";
+"OpenTheApp"="Abra la aplicación FR8.";

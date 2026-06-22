@@ -1,0 +1,4 @@
+Key_path:-android/app/18FebReleaseNew.jks
+Key Alias:-key0
+Key_store_password:-123456
+Key_password:-123456

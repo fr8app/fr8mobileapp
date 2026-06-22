@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FR8</string>
+    <string name="title">FR8</string>
+    <string name="message">Please Open the FR8 app.</string>
+    <string name="bg_geolocation_service_channel_id">FR8_foreground</string>
+    <string name="bg_geolocation_service_channel_name">FR8_foreground</string>
+
+    <string name="facebook_app_id">543427154189123</string>
+    <string name="fb_login_protocol_scheme">fb543427154189123</string>
+    <string name="facebook_client_token">7adee766c823412da0367400e1d10bce</string>
+</resources>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.transistorsoft.fetch</string>
+	</array>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>FR8</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb543427154189123</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>FacebookAppID</key>
+	<string>543427154189123</string>
+	<key>FacebookClientToken</key>
+	<string>7adee766c823412da0367400e1d10bce</string>
+	<key>FacebookDisplayName</key>
+	<string>FR8</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>FR8 would like to use camera for profile picture, upload posts and videos.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>FR8 would like to access contacts to share messages and invites.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>FR8 would like to access your location to time stamp your terminal in and out time.
+    Automatically calculate your Detention time by always providing your location data.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>FR8 would like to access your location to time stamp your terminal in and out time.
+    Automatically calculate your Detention time by always providing your location data.</string>
+	<key>NSLocationAlwaysUsageDescription - INACTIVE</key>
+	<string>FR8 need to use your location permission for background activity to check the entrance and exit from geofence terminals.
+    Automatically calculate your Detention time by always providing your location data.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>FR8 would like to access your location to time stamp your terminal in and out time.
+    Automatically calculate your Detention time by always providing your location data.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>FR8 would like to use your microphone to record videos</string>
+	<key>NSMotionUsageDescription</key>
+	<string>FR8 need to use your Motion permission for background activity to check the entrance and exit from geofence terminals.
+    Automatically calculate your Detention time by always providing your location data.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string> FR8 would like access to your photo gallery for profile pictures, upload photos and videos</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string> FR8 would like access to your photo gallery for profile pictures, upload photos and videos</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AntDesign.ttf</string>
+		<string>Entypo.ttf</string>
+		<string>EvilIcons.ttf</string>
+		<string>Feather.ttf</string>
+		<string>FontAwesome.ttf</string>
+		<string>FontAwesome5_Brands.ttf</string>
+		<string>FontAwesome5_Regular.ttf</string>
+		<string>FontAwesome5_Solid.ttf</string>
+		<string>Fontisto.ttf</string>
+		<string>Foundation.ttf</string>
+		<string>Ionicons.ttf</string>
+		<string>MaterialCommunityIcons.ttf</string>
+		<string>MaterialIcons.ttf</string>
+		<string>museo-500-webfont.ttf</string>
+		<string>Octicons.ttf</string>
+		<string>SimpleLineIcons.ttf</string>
+		<string>Zocial.ttf</string>
+		<string>OpenSans-Regular.ttf</string>
+		<string>OpenSans-Bold.ttf</string>
+		<string>OpenSans-Light.ttf</string>
+		<string>OpenSans-Semibold.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>location</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UIStatusBarHidden</key>
+	<false/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>branch_app_domain</key>
+	<string>xffia.app.link</string>
+	<key>branch_key</key>
+	<string>key_live_fg6nRbib2CwY4PuFnK45kjibtAmpj710</string>
+	<key>branch_universal_link_domains</key>
+	<array>
+		<string>xffia.app.link</string>
+		<string>xffia-alternate.app.link</string>
+	</array>
+</dict>
+</plist>
